@@ -1,0 +1,6 @@
+{
+  "env": "dev",
+  "wssURL": "ws://127.0.0.1:10255/",
+  "restURL": "http://localhost:8682/",
+  "destinations": ["Market1", "CME", "TestMarket"]
+}

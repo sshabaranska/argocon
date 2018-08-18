@@ -1,0 +1,35 @@
+1. Download and Install WebStorm https://www.jetbrains.com/webstorm/download/
+
+2. Download and Install Node.js https://nodejs.org/en/download/
+	2.1. Add to $PATH
+	
+3. Open project in WebStorm IDE
+
+4. In WebStorm Terminal execute:
+	npm install -g @angular/cli 
+	npm install --save-dev @types/jquery
+	npm install spin.js@2.x --save
+	npm install ng-ts-spinner --save
+	npm install --save classlist.js
+	npm i
+	ng serve --open
+
+or in Ubuntu:
+	sudo apt install nodejs npm
+	npm install --save-dev @types/jquery
+	sudo npm install -g npm xml2js
+	sudo npm install @angular/cli 
+	npm install spin.js@2.x --save
+	npm install ng-ts-spinner --save
+	npm install --save classlist.js
+	npm install --no-optional
+	ng serve --open
+
+5. Build for IDAP demo:
+	ng build -c demo
+
+6. Editable configuration files are in assets/config.
+
+Charting library website:
+https://github.com/tradingview/charting_library/wiki
+login: zvenik@comcast.net pwd: sailor103
