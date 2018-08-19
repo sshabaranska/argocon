@@ -6,21 +6,27 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class AppConfig {
 
-  static settings: IAppConfig;
+  settings: IAppConfig;
 
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient,
+              private appService: AppService) {}
 
-  load() {
-    // console.log('AppConfig.load');
-    const jsonFile = `config/config.${environment.name}.json`;
-    return new Promise<void>((resolve, reject) => {
-      this.http.get<IAppConfig>(jsonFile).toPromise().then((value: IAppConfig) => {
-        AppConfig.settings = value;
-        resolve();
-      }).catch((response: any) => {
-        reject(`Could not load file '${jsonFile}': ${JSON.stringify(response)}`);
+  loadConfig() {
+    const jsonFile = `src/config/config.${environment.name}.json`;
+
+    /*this.settings = this.store.select(fromStore.getSettings(jsonFile))
+      .pipe(() => {
+        this.isConnected = this.store.select(fromStore.getSettings(jsonFile)
+      });*/
+
+
+    this.http.get<IAppConfig>(jsonFile)
+      .subscribe((value: IAppConfig) => {
+        this.appService.init();
+        // AppConfig.settings = value;
+
+      }, (err) => {
+        console.log(`Could not load file '${jsonFile}': ${JSON.stringify(err)}`);
       });
-    });
   }
 }

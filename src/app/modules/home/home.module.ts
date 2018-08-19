@@ -5,6 +5,8 @@ import * as fromContainers from './containers';
 import { HomeRoutingModule } from './home.routing.module';
 import { SharedModule } from '../../shared/shared.module';
 
+import { HomeService } from './services/home.service';
+
 @NgModule({
   declarations: [...fromContainers.containers],
   imports: [
@@ -12,6 +14,8 @@ import { SharedModule } from '../../shared/shared.module';
     CommonModule,
     SharedModule
   ],
-  providers: []
+  providers: [
+    HomeService
+  ]
 })
 export class HomeModule { }
