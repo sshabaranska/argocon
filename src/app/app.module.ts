@@ -4,21 +4,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { AppConfig } from './app.config';
+import { AppConfig } from './core/containers/app/app.config';
 
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { reducers, effects } from './store';
+import { reducers, effects, metaReducers } from './core/store';
+import * as fromRootServices from './core/services';
 
-import { AuthService } from './auth/auth.service';
-
-import { AppComponent } from './app.component';
+import { AppComponent } from './core/containers/app/app.component';
 import { AppRoutingModule } from './app.routing.module';
-import { HomeModule } from './modules/home/home.module';
-import { SharedModule } from './shared/shared.module';
+import { HomeModule } from './home/home.module';
+import { SharedModule } from './core/shared/shared.module';
 
 export function initializeApp(appConfig: AppConfig) {
-  return () => appConfig.loadConfig();
+  return () => appConfig.load();
 }
 
 const environment = {
@@ -34,7 +33,7 @@ const environment = {
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    StoreModule.forRoot(reducers),
+    StoreModule.forRoot(reducers, {metaReducers}),
     EffectsModule.forRoot(effects),
     AppRoutingModule,
     HomeModule,
@@ -42,7 +41,7 @@ const environment = {
     environment.development ? StoreDevtoolsModule.instrument() : [],
   ],
   providers: [
-    AuthService,
+    ...fromRootServices.services,
     AppConfig,
     {
       provide: APP_INITIALIZER,
