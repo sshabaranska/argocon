@@ -1,9 +1,25 @@
-$bg-color-black: #000;
-$default-bg-color: #262d33;
-$default-bg-shadow: #3b4752;
-$default-color: #707070;
-$default-shadow-color: #999;
+// background
+$body-bg-color: #303030;
+$default-bg-color: #404040;
+$default-bg-shadow: #696969;
 
+// text color
+$default-color: #DFDFDF;
+$default-color-shadow: #7B7B7B;
+$color-red: #F2484B;
+$color-green: #24E44C;
+
+// table colors
+$tb-caption-background: #2B2B2B;
+$tb-th-background: #404040;
+$tb-td-light: #363636;
+$tb-td-dark: #303030;
+$tb-border: #7D7D7D;
+
+// tab colors
+$tab-inactive: #2B2B2B;
+$tab-active: #404040;
+
+// text size
 $default-font-size: 11px;
-$lg-font-size: 14px;
-
+$large-font-size: 14px;

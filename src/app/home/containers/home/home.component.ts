@@ -21,6 +21,5 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.config$ = this.store.select(state => state.config.configs);
-    console.log(this.config$);
   }
 }

@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { IAppConfig } from '../models/app-config.model';
+import { IAppConfig } from '../models/appConfig.model';
 
 @Injectable()
 export class AppService {

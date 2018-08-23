@@ -1,5 +1,5 @@
 import * as fromApp from '../actions/app.actions';
-import { IAppConfig } from '../../models/app-config.model';
+import { IAppConfig } from '../../models/appConfig.model';
 
 export interface ConfigState {
   configs: IAppConfig;

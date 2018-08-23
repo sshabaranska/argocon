@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 
-import { IAppConfig } from '../../models/app-config.model';
+import { IAppConfig } from '../../models/appConfig.model';
 
 // load config
 export const LOAD_CONFIG = '[App] Load Config';
